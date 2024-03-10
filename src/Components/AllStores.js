@@ -237,7 +237,7 @@ const AllStores = ({
                   className="w-4"
                   checked={checkedOptions?.includes(filter)}
                   value={filter}
-                  onClick={(e) => handleFilterChecks(e.target)}
+                  onChange={(e) => handleFilterChecks(e.target)}
                 />
                 <p className="text-xs">{filter}</p>
               </div>

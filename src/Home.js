@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect, useMemo } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { useLocation } from "react-router-dom";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -24,7 +24,7 @@ const userNavigation = [
 
 export default function Home() {
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
+  const queryParams = useMemo(() => new URLSearchParams(location.search), [location]);
 
   const [categories, setCategories] = useState([]);
   const [stores, setStores] = useState([]);
